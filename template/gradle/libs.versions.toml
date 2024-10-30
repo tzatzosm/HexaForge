@@ -1,5 +1,5 @@
 [versions]
-lombok = '1.18.20'
+lombok = '1.18.34'
 jib = '3.4.4'
 spring-boot = '3.3.5'
 spock = '2.4-M4-groovy-4.0'
@@ -10,6 +10,7 @@ spring-boot-starter = { group = 'org.springframework.boot', name = 'spring-boot-
 spring-boot-starter-actuator = { group = 'org.springframework.boot', name = 'spring-boot-starter-actuator', version.ref = 'spring-boot' }
 spring-boot-starter-web = { group = 'org.springframework.boot', name = 'spring-boot-starter-web', version.ref = 'spring-boot' }
 spring-boot-starter-test = { group = 'org.springframework.boot', name = 'spring-boot-starter-test', version.ref = 'spring-boot' }
+spring-boot-starter-validation = { group = 'org.springframework.boot', name = 'spring-boot-starter-validation', version.ref = 'spring-boot' }
 spock-core = { group = 'org.spockframework', name = 'spock-core', version.ref = 'spock' }
 spock-spring = { group = 'org.spockframework', name = 'spock-spring', version.ref = 'spock' }
 

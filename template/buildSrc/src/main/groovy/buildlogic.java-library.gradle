@@ -1,4 +1,4 @@
 plugins {
     id 'java-library'
-    id 'buildlogic.java-core-conventions'
+    id 'buildlogic.java-core'
 }

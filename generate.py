@@ -19,9 +19,11 @@ if not project:
     print("Error: project cannot be empty.")
     sys.exit(1)
 
-default_image_name = snake(project)
-image_name = input(f"Enter the image name (default: {default_image_name}): ").strip() or default_image_name
-group = input("Enter the group (default: com.example): ").strip() or "com.example"
+project_name_snake = snake(project)
+
+image_name = input(f"Enter the image name (default: {project_name_snake}): ").strip() or project_name_snake
+
+group = input(f"Enter the group (default: com.example.{project_name_snake}): ").strip() or f"com.example.{project_name_snake}"
 
 # Exit with error if group is empty
 if not group:

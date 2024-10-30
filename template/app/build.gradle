@@ -1,11 +1,12 @@
 plugins {
-    id 'java'
     id 'buildlogic.java-application'
     alias(libs.plugins.jib)
     alias(libs.plugins.spring.boot)
 }
 
 dependencies {
+    implementation project(':api')
+
     implementation libs.spring.boot.starter
     implementation libs.spring.boot.starter.actuator
     implementation libs.spring.boot.starter.web
