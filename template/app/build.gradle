@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'buildlogic.java-application'
+    alias(libs.plugins.jib)
+    alias(libs.plugins.spring.boot)
+}
+
+dependencies {
+    implementation libs.spring.boot.starter
+    implementation libs.spring.boot.starter.actuator
+    implementation libs.spring.boot.starter.web
+
+    testImplementation libs.spring.boot.starter.test
+    testImplementation libs.spock.core
+    testImplementation libs.spock.spring
+}
+
+bootJar {
+    archiveFileName = '{{project}}.' + archiveExtension.get()
+}
+
+springBoot {
+    buildInfo()
+}
+
+jib {
+    from {
+        image = 'amazoncorretto:21.0.5-alpine3.20'
+    }
+    to {
+        image = '{{image_name}}'
+        tags = ['latest']
+    }
+    container {
+        workingDirectory = '/app'
+    }
+}

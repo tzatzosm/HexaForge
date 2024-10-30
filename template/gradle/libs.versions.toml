@@ -1,0 +1,18 @@
+[versions]
+lombok = '1.18.20'
+jib = '3.4.4'
+spring-boot = '3.3.5'
+spock = '2.4-M4-groovy-4.0'
+
+[libraries]
+lombok = { group = 'org.projectlombok', name = 'lombok', version.ref = 'lombok' }
+spring-boot-starter = { group = 'org.springframework.boot', name = 'spring-boot-starter', version.ref = 'spring-boot' }
+spring-boot-starter-actuator = { group = 'org.springframework.boot', name = 'spring-boot-starter-actuator', version.ref = 'spring-boot' }
+spring-boot-starter-web = { group = 'org.springframework.boot', name = 'spring-boot-starter-web', version.ref = 'spring-boot' }
+spring-boot-starter-test = { group = 'org.springframework.boot', name = 'spring-boot-starter-test', version.ref = 'spring-boot' }
+spock-core = { group = 'org.spockframework', name = 'spock-core', version.ref = 'spock' }
+spock-spring = { group = 'org.spockframework', name = 'spock-spring', version.ref = 'spock' }
+
+[plugins]
+jib = { id = 'com.google.cloud.tools.jib', version.ref = 'jib' }
+spring-boot = { id = 'org.springframework.boot', version.ref = 'spring-boot' }

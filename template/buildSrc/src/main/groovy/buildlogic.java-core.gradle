@@ -1,0 +1,33 @@
+plugins {
+    id 'groovy'
+}
+
+repositories {
+    gradlePluginPortal()
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+testing {
+    suites {
+        configureEach {
+            useJUnitJupiter()
+        }
+    }
+}
+
+sourceSets {
+    test {
+        java.srcDirs = [] // Disable java directory for tests as we are using groovy
+    }
+}
+
+dependencies {
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+}
