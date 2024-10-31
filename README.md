@@ -67,3 +67,8 @@ Docker Compose is a tool for defining and running multi-container Docker applica
   ```sh
   docker-compose down
   ```
+
+## Features
+
+1. **Swagger**:
+  [springdoc-openapi](https://springdoc.org/#Introduction) is used to generate OpenAPI documentation for your application and can be found at `http://localhost:8080/swagger-ui/index.html`.
