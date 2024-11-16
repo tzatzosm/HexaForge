@@ -13,8 +13,6 @@ java {
     }
 }
 
-jar.enabled = false // Disable jar task as we are using spring boot plugin
-
 dependencies {
     compileOnly libs.lombok
     annotationProcessor libs.lombok

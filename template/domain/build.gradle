@@ -3,8 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation project(':domain')
-
     implementation libs.spring.boot.starter
     implementation libs.spring.boot.starter.web
     implementation libs.spring.boot.starter.validation
