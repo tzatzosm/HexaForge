@@ -2,3 +2,5 @@ plugins {
     id 'java'
     id 'buildlogic.java-core'
 }
+
+jar.enabled = false // Disable jar task as we are using spring boot plugin

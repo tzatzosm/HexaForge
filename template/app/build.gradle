@@ -1,5 +1,5 @@
 plugins {
-    id 'buildlogic.java-application'
+    alias(libs.plugins.application)
     alias(libs.plugins.jib)
     alias(libs.plugins.spring.boot)
 }

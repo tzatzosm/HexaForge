@@ -17,5 +17,7 @@ spock-core = { group = 'org.spockframework', name = 'spock-core', version.ref = 
 spock-spring = { group = 'org.spockframework', name = 'spock-spring', version.ref = 'spock' }
 
 [plugins]
+application = { id = 'buildlogic.java-application' }
 jib = { id = 'com.google.cloud.tools.jib', version.ref = 'jib' }
+library = { id = 'buildlogic.java-library' }
 spring-boot = { id = 'org.springframework.boot', version.ref = 'spring-boot' }
