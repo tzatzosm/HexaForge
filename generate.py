@@ -62,12 +62,15 @@ replacements = {
 }
 
 # List of files and directories to copy directly
-direct_copy_items = {".gradle", "gradle", "gradlew", "gradlew.bat"}
+direct_copy_items = {"gradle", "gradlew", "gradlew.bat"}
+
+# Directories to exclude from copying
+excluded_directories = {"build", ".gradle", "target", "out", "bin", ".idea", ".vscode", "__pycache__", "node_modules"}
 
 # Iterate over all files and directories in the template directory
 for root, dirs, files in os.walk(template_dir):
-    # Skip the output directory
-    dirs[:] = [d for d in dirs if os.path.join(root, d) != output_dir]
+    # Skip the output directory and excluded directories
+    dirs[:] = [d for d in dirs if os.path.join(root, d) != output_dir and d not in excluded_directories]
 
     # Process directories to copy directly
     for dir_name in direct_copy_items:
@@ -108,8 +111,9 @@ for root, dirs, files in os.walk(template_dir):
             # Save the rendered content to the output file
             with open(output_file_path, "w") as f:
                 f.write(output)
-        except jinja2.exceptions.TemplateSyntaxError:
-            # If the file is not a Jinja2 template, copy it directly
+        except (jinja2.exceptions.TemplateSyntaxError, UnicodeDecodeError):
+            # If the file is not a Jinja2 template or has encoding issues, copy it directly
+            print(f"Copying file (template error): {template_path}")
             output_file_path = replace_placeholders_in_path(output_file_path, replacements)
             os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
             shutil.copy2(template_path, output_file_path)
